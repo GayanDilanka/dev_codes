@@ -1,0 +1,8 @@
+my_list = ['edit"vdom"', 'edit"test1', 'edit"test2"']
+
+result = []
+for item in my_list:
+    item = item.replace('edit', '').strip('"')  # remove "edit" and surrounding quotes
+    result.extend(item.split(','))  # split by comma and extend the result list
+
+print(result)
