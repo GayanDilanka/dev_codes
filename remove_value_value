@@ -6,3 +6,19 @@ for item in my_list:
     result.extend(item.split(','))  # split by comma and extend the result list
 
 print(result)
+
+import re
+result = ['CNF-V2-L3','London-CNF']  #define an empty list 
+final_vdoms = []
+#print(result)
+
+#This code block will remove all the unnecessary strings and symbols and finnaly shows the list of vdoms 
+pattern = re.compile(r'\w+[_-]\w+|\w+') # define the pattern for re , this was generated usingn chatGTP
+
+
+for item in result:
+   match = pattern.findall(item)
+   if match:
+      final_vdoms.extend(match)
+
+print(final_vdoms)
